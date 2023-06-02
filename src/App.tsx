@@ -1,15 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
+import { gifType } from './types/interface'
 
-function App() {
+const App = () => {
+  const [gifs, setGifs] = useState<gifType[]>([])
+
+  const getGif = async () => {
+    const response = await fetch('http://localhost:3000/api/gifs')
+    const data = await response.json()
+    setGifs(data)
+  }
+
+  useEffect(() => {
+    getGif()
+  }, [])
+
+
   return (
     <div className="App">
-      <p>
-        Hola biko Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Voluptate illum incidunt fugit maiores possimus neque, exercitationem
-        quia assumenda cumque ipsum officia, rem repudiandae error repellat,
-        corporis laborum aut iure fuga?
-      </p>
+      {gifs.map((gif, index) => (
+        <img src={gif.imgUrl} alt={gif.name} key={index} />
+      ))}
     </div>
   )
 }
