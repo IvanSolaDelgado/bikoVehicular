@@ -15,6 +15,7 @@ const App = () => {
     getGif()
   }, [])
 
+
   return (
     <div className="App">
       {gifs.map((gif, index) => (
