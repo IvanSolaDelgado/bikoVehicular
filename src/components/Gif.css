@@ -1,12 +1,11 @@
-/* .gifs {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+.gifs {
+  display: grid;
+  grid-template-columns: repeat (3, 1fr);
+}
 
 .gif {
-  object-fit: cover;
   width: 200px;
   height: 200px;
   border-radius: 15px;
+  object-fit: cover;
 }

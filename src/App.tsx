@@ -1,11 +1,13 @@
 import './App.css'
-import Gif from './components/Gif'
+import "./styles/index.js"
+import GifList from './components/Gif'
 
 const App = () => {
 
   return (
     <div className="App">
-      <Gif />
+      <GifList />
+
     </div>
   )
 }
