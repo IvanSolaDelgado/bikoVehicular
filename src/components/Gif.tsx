@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { gifType } from '../types/interface';
+import "./Gif.css"
 
 const Gif = () => {
   const [gifs, setGifs] = useState<gifType[]>([])
@@ -16,7 +17,7 @@ const Gif = () => {
   return ( 
     <div className='gifs'>
       {gifs.map((gif, index) => (
-        <img src={gif.imgUrl} alt={gif.name} key={index} />
+        <img className="gif" src={gif.imgUrl} alt={gif.name} key={index} />
       ))}
     </div>
    );
