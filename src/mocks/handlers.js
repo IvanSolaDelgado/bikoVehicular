@@ -10,7 +10,7 @@ export const handlers = [
         },
         {
           name: 'gato loco',
-          imgUrl: 'https://media2.giphy.com/media/ouNNlZiPMbv61kzS1M/giphy.gif',
+          imgUrl: 'https://media2.giphy.com/media/tRoH9EYLs3lok/giphy.gif',
         },
       ]),
     )

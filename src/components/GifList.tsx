@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react'
-import { gifType } from '../types/interface'
-import '../styles/index.js'
+import { Gif } from '../types/interface'
+import './GifList.css'
 
-const GifList = () => {
-  const [gifs, setGifs] = useState<gifType[]>([])
-  const getGif = async () => {
+export const GifList = () => {
+  const [gifs, setGifs] = useState<Gif[]>([])
+  const getGifs = async () => {
     const response = await fetch('http://localhost:3000/api/gifs')
     const data = await response.json()
     setGifs(data)
   }
 
   useEffect(() => {
-    getGif()
+    getGifs()
   }, [])
 
   return (
@@ -22,5 +22,3 @@ const GifList = () => {
     </div>
   )
 }
-
-export default GifList
