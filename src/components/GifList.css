@@ -1,0 +1,11 @@
+.gifs {
+  display: grid;
+  grid-template-columns: repeat (3, 1fr);
+}
+
+.gif {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  object-fit: cover;
+}
