@@ -19,6 +19,7 @@ export const GifList = () => {
   }, [])
 
   if (isLoading) return <p>Loading...</p>
+  if (gifs.length === 0) return <p>Sorry, gifs not found :/</p>
 
   return (
     <div className="gifs">

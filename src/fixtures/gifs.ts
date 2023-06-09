@@ -12,11 +12,11 @@ export const gifsFixture = [
     imgUrl: 'https://media3.giphy.com/media/HZJA9INcmzO92/giphy.gif',
   },
   {
-    name: '5',
+    name: '4',
     imgUrl: 'https://media3.giphy.com/media/HZJA9INcmzO92/giphy.gif',
   },
   {
-    name: '6',
+    name: '5',
     imgUrl: 'https://media3.giphy.com/media/HZJA9INcmzO92/giphy.gif',
   },
 ]
