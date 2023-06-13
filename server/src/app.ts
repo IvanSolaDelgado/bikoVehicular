@@ -1,5 +1,6 @@
 import express, { Express, Request, Response } from 'express'
 import morgan from 'morgan'
+import { apiRoutes } from './apiRoutes'
 
 export const app: Express = express()
 // Shows request log on terminal
@@ -12,6 +13,8 @@ app.use(express.json())
 // http://expressjs.com/es/api.html#express.urlencoded
 app.use(express.urlencoded({ extended: false }))
 
-app.get('/api/gifs', (req, res) => {
+app.use('/api', apiRoutes)
+
+apiRoutes.get('/gifs', (req, res) => {
   res.sendStatus(200)
 })
