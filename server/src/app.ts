@@ -16,5 +16,5 @@ app.use(express.urlencoded({ extended: false }))
 app.use('/api', apiRoutes)
 
 apiRoutes.get('/gifs', (req, res) => {
-  res.sendStatus(200)
+  res.status(200).json([])
 })
