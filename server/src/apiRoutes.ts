@@ -1,5 +1,5 @@
 import express from 'express'
-import lowdb, { LowdbSync } from 'lowdb'
+import { LowdbSync } from 'lowdb'
 import './app'
 import { DatabaseSchema } from './DatabaseSchema'
 

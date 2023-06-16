@@ -1,7 +1,14 @@
 import request from 'supertest'
-import { app } from './app'
+import { createApp } from './app'
+import lowdb from 'lowdb'
+import FileSync from 'lowdb/adapters/FileSync'
+import { DatabaseSchema } from './DatabaseSchema'
 
 describe('/api/gifs', () => {
+  const adapter = new FileSync<DatabaseSchema>('./data/db.json')
+  const db = lowdb(adapter)
+  const app = createApp(db)
+
   it('endpoint existe', (done) => {
     request(app).get('/api/gifs').expect(200, done)
   })

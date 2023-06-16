@@ -1,7 +1,15 @@
 import http, { Server } from 'http'
-import { app } from './app'
+import { createApp } from './app'
+import lowdb from 'lowdb'
+import FileSync from 'lowdb/adapters/FileSync'
+import { DatabaseSchema } from './DatabaseSchema'
+
+const adapter = new FileSync<DatabaseSchema>('./data/db.json')
+const db = lowdb(adapter)
 
 const port: string = process.env.PORT || '3000'
+
+const app = createApp(db)
 
 // Assigns setting name to value
 // http://expressjs.com/es/api.html#app.set

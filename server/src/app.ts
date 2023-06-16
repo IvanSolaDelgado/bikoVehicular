@@ -1,22 +1,21 @@
-import express, { Express, Request, Response } from 'express'
+import express, { Express } from 'express'
 import morgan from 'morgan'
 import { createRoutes } from './apiRoutes'
-import lowdb, { LowdbSync } from 'lowdb'
+import { LowdbSync } from 'lowdb'
 import { DatabaseSchema } from './DatabaseSchema'
-import FileSync from 'lowdb/adapters/FileSync'
 
-const adapter = new FileSync<DatabaseSchema>('./data/db.json')
-const db = lowdb(adapter)
+export const createApp = (db: LowdbSync<DatabaseSchema>) => {
+  const app: Express = express()
+  // Shows request log on terminal
+  // https://github.com/expressjs/morgan
+  app.use(morgan('dev'))
+  // Parses incoming requests with JSON payloads
+  // http://expressjs.com/es/api.html#express.json
+  app.use(express.json())
+  // Parses incoming requests with urlencoded payloads
+  // http://expressjs.com/es/api.html#express.urlencoded
+  app.use(express.urlencoded({ extended: false }))
 
-export const app: Express = express()
-// Shows request log on terminal
-// https://github.com/expressjs/morgan
-app.use(morgan('dev'))
-// Parses incoming requests with JSON payloads
-// http://expressjs.com/es/api.html#express.json
-app.use(express.json())
-// Parses incoming requests with urlencoded payloads
-// http://expressjs.com/es/api.html#express.urlencoded
-app.use(express.urlencoded({ extended: false }))
-
-app.use('/api', createRoutes(db))
+  app.use('/api', createRoutes(db))
+  return app
+}
