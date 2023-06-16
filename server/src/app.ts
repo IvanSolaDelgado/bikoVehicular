@@ -1,6 +1,12 @@
 import express, { Express, Request, Response } from 'express'
 import morgan from 'morgan'
-import { apiRoutes } from './apiRoutes'
+import { createRoutes } from './apiRoutes'
+import lowdb, { LowdbSync } from 'lowdb'
+import { DatabaseSchema } from './DatabaseSchema'
+import FileSync from 'lowdb/adapters/FileSync'
+
+const adapter = new FileSync<DatabaseSchema>('./data/db.json')
+const db = lowdb(adapter)
 
 export const app: Express = express()
 // Shows request log on terminal
@@ -13,4 +19,4 @@ app.use(express.json())
 // http://expressjs.com/es/api.html#express.urlencoded
 app.use(express.urlencoded({ extended: false }))
 
-app.use('/api', apiRoutes)
+app.use('/api', createRoutes(db))

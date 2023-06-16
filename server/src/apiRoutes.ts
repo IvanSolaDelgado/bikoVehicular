@@ -1,15 +1,14 @@
 import express from 'express'
-import lowdb from 'lowdb'
-import FileSync from 'lowdb/adapters/FileSync'
+import lowdb, { LowdbSync } from 'lowdb'
 import './app'
 import { DatabaseSchema } from './DatabaseSchema'
 
-const adapter = new FileSync<DatabaseSchema>('./data/db.json')
-const db = lowdb(adapter)
+export const createRoutes = (db: LowdbSync<DatabaseSchema>) => {
+  const apiRoutes = express.Router()
 
-export const apiRoutes = express.Router()
-
-apiRoutes.get('/gifs', (req, res) => {
-  const gifs = db.get('gifs').take(50).value()
-  res.status(200).json(gifs)
-})
+  apiRoutes.get('/gifs', (req, res) => {
+    const gifs = db.get('gifs').take(50).value()
+    res.status(200).json(gifs)
+  })
+  return apiRoutes
+}
