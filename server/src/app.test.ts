@@ -1,13 +1,19 @@
 import request from 'supertest'
 import { createApp } from './app'
 import lowdb from 'lowdb'
-import FileSync from 'lowdb/adapters/FileSync'
+import Memory from 'lowdb/adapters/Memory'
 import { DatabaseSchema } from './DatabaseSchema'
+import { Express } from 'express'
+import dbData from './fixtures/db.json'
 
 describe('/api/gifs', () => {
-  const adapter = new FileSync<DatabaseSchema>('./data/db.json')
-  const db = lowdb(adapter)
-  const app = createApp(db)
+  let app: Express
+  beforeEach(() => {
+    const adapter = new Memory<DatabaseSchema>('./data/db.json')
+    const db = lowdb(adapter)
+    db.defaults(dbData).write()
+    app = createApp(db)
+  })
 
   it('endpoint existe', (done) => {
     request(app).get('/api/gifs').expect(200, done)
