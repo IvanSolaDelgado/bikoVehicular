@@ -14,4 +14,16 @@ describe('/api/gifs', () => {
         done()
       })
   })
+  it('la lista tiene 50 items', (done) => {
+    request(app)
+      .get('/api/gifs')
+
+      .expect(200)
+      .then((res) => {
+        console.log(res.body)
+
+        expect(res.body).toHaveLength(50)
+        done()
+      })
+  })
 })
