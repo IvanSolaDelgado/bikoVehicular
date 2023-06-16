@@ -2,11 +2,7 @@ import express from 'express'
 import lowdb from 'lowdb'
 import FileSync from 'lowdb/adapters/FileSync'
 import './app'
-
-interface DatabaseSchema {
-  gifs: Gif[]
-}
-interface Gif {}
+import { DatabaseSchema } from './DatabaseSchema'
 
 const adapter = new FileSync<DatabaseSchema>('./data/db.json')
 const db = lowdb(adapter)
