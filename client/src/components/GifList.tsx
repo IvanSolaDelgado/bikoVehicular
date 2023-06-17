@@ -14,7 +14,6 @@ export const GifList = () => {
     setIsLoading(false)
   }
 
-  console.log('gifs', gifs)
   useEffect(() => {
     getGifs()
   }, [])
