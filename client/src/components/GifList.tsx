@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
-import { Gif } from '../types/interface'
+import { Gif } from '../domain/Gif'
 import './GifList.css'
+import { gifService } from '../domain/GifService'
 
 export const GifList = () => {
   const [gifs, setGifs] = useState<Gif[]>([])
@@ -8,12 +9,12 @@ export const GifList = () => {
 
   const getGifs = async () => {
     setIsLoading(true)
-    const response = await fetch('http://localhost:3000/api/gifs')
-    const data = await response.json()
-    setGifs(data)
+    const gifs = await gifService.getGifs()
+    setGifs(gifs)
     setIsLoading(false)
   }
 
+  console.log('gifs', gifs)
   useEffect(() => {
     getGifs()
   }, [])
