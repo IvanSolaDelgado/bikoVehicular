@@ -17,5 +17,6 @@ export const createApp = (db: LowdbSync<DatabaseSchema>) => {
   app.use(express.urlencoded({ extended: false }))
 
   app.use('/api', createRoutes(db))
+
   return app
 }

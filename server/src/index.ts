@@ -3,6 +3,7 @@ import { createApp } from './app'
 import lowdb from 'lowdb'
 import FileSync from 'lowdb/adapters/FileSync'
 import { DatabaseSchema } from './DatabaseSchema'
+import cors from 'cors'
 
 const adapter = new FileSync<DatabaseSchema>('./data/db.json')
 const db = lowdb(adapter)
@@ -10,6 +11,8 @@ const db = lowdb(adapter)
 const port: string = process.env.PORT || '3000'
 
 const app = createApp(db)
+
+app.use(cors())
 
 // Assigns setting name to value
 // http://expressjs.com/es/api.html#app.set
