@@ -9,7 +9,7 @@ describe('listado de gifs', () => {
     render(<App />)
 
     for (const gif of gifsFixture) {
-      expect(await screen.findByRole('img', { name: gif.name })).toBeVisible()
+      expect(await screen.findByAltText(gif.name)).toBeVisible()
     }
   })
 
