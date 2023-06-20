@@ -5,6 +5,16 @@
   --font-size-h3: 25px;
   --font-size-h2: 36px;
   --font-size-h1: 42px;
-  --small: 4px;
+  --font-weight-light: 300;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --xtiny: 4px;
   --tiny: 8px;
+  --small: 12px;
+  --mini: 16px;
+  --base: 24px;
+  --medium: 32px;
+  --large: 48px;
+  --xlarge: 64px;
+  --huge: 96px;
 }

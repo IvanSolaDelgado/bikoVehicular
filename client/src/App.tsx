@@ -1,5 +1,5 @@
-import './styles/reset.css'
-import './styles/reboot.css'
+import './styles/index'
+
 import { Home } from './components/pages/Home'
 
 const App = () => {

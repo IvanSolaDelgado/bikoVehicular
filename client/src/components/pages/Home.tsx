@@ -1,5 +1,6 @@
 import { GifList } from '../GifList'
 import { Navbar } from '../Navbar'
+import { Searchbar } from '../Searchbar'
 import './Home.css'
 
 export const Home = () => {
@@ -8,6 +9,7 @@ export const Home = () => {
       <section>
         <header>
           <Navbar />
+          <Searchbar />
         </header>
         <main>
           <GifList />
