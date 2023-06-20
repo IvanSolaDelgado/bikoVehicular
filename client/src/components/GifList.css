@@ -1,6 +1,9 @@
-.gifs {
-  display: grid;
-  grid-template-columns: repeat (3, 1fr);
+.gifs-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1300px;
+  gap: 33px;
 }
 
 .gif {

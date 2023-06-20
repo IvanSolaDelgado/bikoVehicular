@@ -14,7 +14,6 @@ export const GifList = () => {
     setIsLoading(false)
   }
 
-  console.log('gifs', gifs)
   useEffect(() => {
     getGifs()
   }, [])
@@ -23,7 +22,7 @@ export const GifList = () => {
   if (gifs.length === 0) return <p>Sorry, gifs not found :/</p>
 
   return (
-    <div className="gifs">
+    <div className="gifs-container">
       {gifs.map((gif, index) => (
         <img className="gif" src={gif.imgUrl} alt={gif.name} key={index} />
       ))}

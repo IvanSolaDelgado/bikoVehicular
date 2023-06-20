@@ -1,0 +1,12 @@
+.navbar-container {
+  display: flex;
+  align-items: center;
+  padding-left: 84px;
+}
+
+.navbar-logo {
+}
+
+.navbar-title {
+  text-transform: uppercase;
+}

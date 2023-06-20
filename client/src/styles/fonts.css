@@ -1,0 +1,10 @@
+:root {
+  --font-size-small: 12px;
+  --font-size-base: 16px;
+  --font-size-h4: 18px;
+  --font-size-h3: 25px;
+  --font-size-h2: 36px;
+  --font-size-h1: 42px;
+  --small: 4px;
+  --tiny: 8px;
+}
