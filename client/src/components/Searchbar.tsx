@@ -1,4 +1,5 @@
 import './Searchbar.css'
+import lupa from '../assets/Lupa.svg'
 
 export const Searchbar = () => {
   return (
@@ -8,6 +9,9 @@ export const Searchbar = () => {
         className="searchbar"
         placeholder="¿Que quieres buscar? ¡Encuentralo!"
       />
+      <button className="search-button" aria-label="Search">
+        <img src={lupa} alt="" />
+      </button>
     </div>
   )
 }
