@@ -28,3 +28,12 @@
   );
   cursor: pointer;
 }
+
+@media (max-width: 24.375rem) {
+  .searchbar {
+    width: 50rem;
+  }
+  .search-button {
+    right: 10rem;
+  }
+}

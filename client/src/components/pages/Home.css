@@ -12,3 +12,12 @@ body {
   margin-left: 12.5rem;
   padding-top: var(--large);
 }
+
+/* Media query para mobile */
+
+@media (max-width: 24.375rem) {
+  .home-container {
+    width: 60rem;
+    margin-left: 8rem;
+  }
+}
