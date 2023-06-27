@@ -6,6 +6,22 @@
   gap: 2rem;
 }
 
+.header-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.header-arrow {
+  width: 2.5rem;
+}
+
+.header-title {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+}
+
 .gif {
   width: 12.5rem;
   height: 12.5rem;
