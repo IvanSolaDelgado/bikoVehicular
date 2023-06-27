@@ -1,7 +1,6 @@
 .navbar-container {
   display: flex;
   align-items: center;
-  padding-left: 84px;
   gap: var(--mini);
 }
 

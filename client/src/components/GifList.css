@@ -2,13 +2,13 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 1300px;
-  gap: 33px;
+  max-width: 81.25rem;
+  gap: 2rem;
 }
 
 .gif {
-  width: 200px;
-  height: 200px;
-  border-radius: 15px;
+  width: 12.5rem;
+  height: 12.5rem;
+  border-radius: 1rem;
   object-fit: cover;
 }
