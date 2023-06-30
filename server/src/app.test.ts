@@ -35,7 +35,7 @@ describe('/api/gifs', () => {
       .then((res) => {
         console.log(res.body)
 
-        expect(res.body).toHaveLength(10)
+        expect(res.body).toHaveLength(50)
         done()
       })
   })
