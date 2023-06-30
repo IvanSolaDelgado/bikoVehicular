@@ -1,8 +1,27 @@
 .gifs-container {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
-  row-gap: 2.0625rem;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  justify-content: space-around;
+  gap: 2rem;
 }
+
+/* .gifs-container {
+  display: grid;
+  width: 100%;
+  justify-content: space-around;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: 2rem;
+}
+.gifs-container .title img {
+  width: 40px;
+}
+.gifs-container .title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+} */
 
 .header-container {
   display: flex;

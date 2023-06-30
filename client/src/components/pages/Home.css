@@ -9,15 +9,7 @@ body {
 
 .home-container {
   padding-top: 2rem;
-  width: 77vw;
-  margin-left: 12.3rem;
-}
-
-/* Media query para tablets */
-
-@media (max-width: 24.375rem) {
-  .home-container {
-    width: 60rem;
-    margin-left: 8rem;
-  }
+  width: 80vw;
+  top: 13%;
+  transform: translateX(13%);
 }
