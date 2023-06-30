@@ -1,9 +1,7 @@
 .gifs-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 81.25rem;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+  row-gap: 2.0625rem;
 }
 
 .header-container {
@@ -29,7 +27,7 @@
   object-fit: cover;
 }
 
-@media (max-width: 24.375rem) {
+/* @media (max-width: 40.625rem) {
   .gifs-container {
     margin-right: 7.5rem;
   }
@@ -37,4 +35,14 @@
     width: 25rem;
     height: 25rem;
   }
-}
+} */
+
+/* @media (max-width: 50rem) {
+  .gifs-container {
+    margin-right: 7.5rem;
+  }
+  .gif {
+    width: 15rem;
+    height: 15rem;
+  }
+} */

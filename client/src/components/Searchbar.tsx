@@ -3,7 +3,7 @@ import lupa from '../assets/Lupa.svg'
 
 export const Searchbar = () => {
   return (
-    <div className="searchbar-container">
+    <form className="searchbar-container">
       <input
         type="search"
         className="searchbar"
@@ -12,6 +12,6 @@ export const Searchbar = () => {
       <button className="search-button" aria-label="Search">
         <img src={lupa} alt="" />
       </button>
-    </div>
+    </form>
   )
 }
