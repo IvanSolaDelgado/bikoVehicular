@@ -1,0 +1,30 @@
+.searchbar-container {
+  display: flex;
+  align-items: center;
+  margin: 4.375rem 0;
+  width: calc(100% - 70px);
+}
+
+.searchbar {
+  flex-grow: 1;
+  height: 4.375rem;
+  border-radius: 1rem 0 0 1rem;
+  border: none;
+  font-size: var(--font-size-h4);
+  padding-left: 1.25rem;
+}
+
+.search-button {
+  margin-right: 8px;
+  width: 4.375rem;
+  height: 4.375rem;
+  border-radius: 0 1rem 1rem 0;
+  border: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 243, 92, 0.77) 0%,
+    rgba(0, 204, 255, 0.46) 51.04%,
+    rgba(0, 255, 153, 0.37) 100%
+  );
+  cursor: pointer;
+}

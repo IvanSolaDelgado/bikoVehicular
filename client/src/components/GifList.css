@@ -1,11 +1,30 @@
-.gifs {
+.gifs-container {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat (3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.header-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.header-arrow {
+  width: 2.5rem;
+}
+
+.header-title {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
 }
 
 .gif {
-  width: 200px;
-  height: 200px;
-  border-radius: 15px;
+  width: 12.5rem;
+  height: 12.5rem;
+  border-radius: 1rem;
   object-fit: cover;
 }

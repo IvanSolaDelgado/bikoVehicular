@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Gif } from '../domain/Gif'
 import './GifList.css'
 import { gifService } from '../domain/GifService'
+import arrow from '../assets/Arrow 1.svg'
 
 export const GifList = () => {
   const [gifs, setGifs] = useState<Gif[]>([])
@@ -14,7 +15,6 @@ export const GifList = () => {
     setIsLoading(false)
   }
 
-  console.log('gifs', gifs)
   useEffect(() => {
     getGifs()
   }, [])
@@ -23,10 +23,16 @@ export const GifList = () => {
   if (gifs.length === 0) return <p>Sorry, gifs not found :/</p>
 
   return (
-    <div className="gifs">
-      {gifs.map((gif, index) => (
-        <img className="gif" src={gif.imgUrl} alt={gif.name} key={index} />
-      ))}
-    </div>
+    <>
+      <header className="header-container">
+        <img className="header-arrow" src={arrow} alt="Diagonal blue arrow " />
+        <h2 className="header-title">Los gifs más trendings del momento</h2>
+      </header>
+      <div className="gifs-container">
+        {gifs.map((gif, index) => (
+          <img className="gif" src={gif.imgUrl} alt={gif.name} key={index} />
+        ))}
+      </div>
+    </>
   )
 }
