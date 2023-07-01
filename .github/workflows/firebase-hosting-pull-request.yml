@@ -21,8 +21,6 @@ jobs:
       - run: npm ci && npm run build
       - uses: pocket-apps/action-setup-firebase@v2
         with:
-          firebase-token: ${{ secrets.FIREBASE_TOKEN }}uses: pocket-apps/action-setup-firebase@v2
-        with:
           firebase-token: ${{ secrets.FIREBASE_TOKEN }}
       - name: Deploy to Firebase
         run: firebase deploy
