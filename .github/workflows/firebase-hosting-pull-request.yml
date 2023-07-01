@@ -21,6 +21,6 @@ jobs:
       - run: npm ci && npm run build
       - name: Deploy to Firebase
         uses: pocket-apps/action-setup-firebase@v2
-          with:
-            firebase-token: ${{ secrets.FIREBASE_TOKEN }}
+        with:
+          firebase-token: ${{ secrets.FIREBASE_TOKEN }}
         run: deploy --only hosting
