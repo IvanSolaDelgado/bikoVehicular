@@ -3,7 +3,7 @@
 
 name: Deploy to Firebase Hosting on merge
 working-directory: client
-'on':
+on:
   push:
     branches:
       - main
