@@ -19,8 +19,9 @@ jobs:
       - name: Install dependencies
         run: npm install
       - run: npm ci && npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GUIFAFFINITY_8F794 }}'
-          projectId: guifaffinity-8f794
+      - name: Deploy to Firebase
+          uses: w9jds/firebase-action@master
+          with:
+            args: deploy --only hosting
+          env:
+            FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
