@@ -5,6 +5,7 @@ on: [push, pull_request]
 jobs:
   client:
     runs-on: ubuntu-latest
+    working-directory: client
 
     steps:
       - name: Checkout repository
@@ -16,11 +17,7 @@ jobs:
           node-version: 14
 
       - name: Install dependencies
-        run: |
-          cd client
-          npm install
+        run: npm install
 
       - name: Run tests
-        run: |
-          cd client
-          npm test
+        run: npm test
