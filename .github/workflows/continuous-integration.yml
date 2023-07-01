@@ -5,7 +5,9 @@ on: [push, pull_request]
 jobs:
   client:
     runs-on: ubuntu-latest
-    working-directory: client
+    defaults:
+      run:
+        working-directory: client
 
     steps:
       - name: Checkout repository
