@@ -28,6 +28,7 @@ describe('listado de gifs', () => {
         return res(ctx.json([]))
       }),
     )
+
     render(<App />)
 
     expect(
