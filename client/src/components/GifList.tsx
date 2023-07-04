@@ -1,27 +1,14 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, FC } from 'react'
 import { Gif } from '../domain/Gif'
 import './GifList.css'
 import { gifService } from '../domain/GifService'
 import arrow from '../assets/Arrow 1.svg'
 
-export const GifList = () => {
-  const [gifs, setGifs] = useState<Gif[]>([])
-  const [isLoading, setIsLoading] = useState(false)
+interface Props {
+  gifs: Gif[]
+}
 
-  const getGifs = async () => {
-    setIsLoading(true)
-    const gifs = await gifService.getGifs()
-    setGifs(gifs)
-    setIsLoading(false)
-  }
-
-  useEffect(() => {
-    getGifs()
-  }, [])
-
-  if (isLoading) return <p>Loading...</p>
-  if (gifs.length === 0) return <p>Sorry, gifs not found :/</p>
-
+export const GifList: FC<Props> = ({ gifs }) => {
   return (
     <>
       <header className="header-container">
