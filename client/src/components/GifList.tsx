@@ -1,7 +1,6 @@
-import { useState, useEffect, FC } from 'react'
+import { FC } from 'react'
 import { Gif } from '../domain/Gif'
 import './GifList.css'
-import { gifService } from '../domain/GifService'
 import arrow from '../assets/Arrow 1.svg'
 
 interface Props {

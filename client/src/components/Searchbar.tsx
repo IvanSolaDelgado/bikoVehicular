@@ -1,21 +1,18 @@
 import './Searchbar.css'
 import lupa from '../assets/Lupa.svg'
-import { ChangeEvent, FC, MouseEvent, useState } from 'react'
+import { ChangeEvent, FC, useState } from 'react'
 
 interface Props {
-  query: string
-  setQuery: (query: string) => void
+  handleOnClick: (query: string) => void
 }
 
-export const Searchbar: FC<Props> = ({ query, setQuery }) => {
+export const Searchbar: FC<Props> = ({ handleOnClick }) => {
+  const [query, setQuery] = useState('')
+
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value)
   }
-  const handleOnClick = (event: MouseEvent<HTMLElement>) => {
-    event.preventDefault()
 
-    console.log(query)
-  }
   return (
     <form className="searchbar-container">
       <input
@@ -28,7 +25,10 @@ export const Searchbar: FC<Props> = ({ query, setQuery }) => {
       <button
         className="search-button"
         aria-label="Search"
-        onClick={handleOnClick}
+        onClick={(e) => {
+          e.preventDefault()
+          handleOnClick(query)
+        }}
       >
         <img src={lupa} alt="" />
       </button>
