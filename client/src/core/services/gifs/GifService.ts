@@ -1,5 +1,5 @@
-import { Gif } from './Gif'
-import { getGifsDetails } from './GifRepository'
+import { Gif } from '../../domain/Gif'
+import { getGifsDetails } from '../../infrastructure/ApiGifRepository'
 
 const getGifs = async (): Promise<Gif[]> => {
   return await getGifsDetails()

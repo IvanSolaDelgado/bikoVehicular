@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Gif } from '../domain/Gif'
+import { Gif } from '../core/domain/Gif'
 import './GifList.css'
 import arrow from '../assets/Arrow 1.svg'
 

@@ -1,16 +1,18 @@
 import './Searchbar.css'
-import lupa from '../assets/Lupa.svg'
+import lupa from '../../../../assets/Lupa.svg'
 import { ChangeEvent, FC, useState } from 'react'
 
 interface Props {
   handleOnClick: (query: string) => void
+  onChange: (query: string) => void
 }
 
-export const Searchbar: FC<Props> = ({ handleOnClick }) => {
+export const Searchbar: FC<Props> = ({ handleOnClick, onChange }) => {
   const [query, setQuery] = useState('')
 
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value)
+    onChange(event.target.value)
   }
 
   return (
