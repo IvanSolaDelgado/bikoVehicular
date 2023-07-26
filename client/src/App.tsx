@@ -1,4 +1,6 @@
+import { FC } from 'react'
 import { AppRouter } from './AppRouter'
+import { Gif } from './core/domain/Gif'
 import './styles/index'
 
 const App = () => {

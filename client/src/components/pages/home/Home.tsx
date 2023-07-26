@@ -14,6 +14,7 @@ interface Props {
 export const Home: FC<Props> = ({ gifs, onFilterGifs, onQueryChange }) => {
   if (!gifs) return <p>Loading...</p>
 
+  console.log(gifs[0])
   return (
     <section className="home-container">
       <section>
