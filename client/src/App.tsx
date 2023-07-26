@@ -1,11 +1,10 @@
+import { AppRouter } from './AppRouter'
 import './styles/index'
-
-import { Home } from './components/pages/home'
 
 const App = () => {
   return (
     <div className="app">
-      <Home />
+      <AppRouter />
     </div>
   )
 }
