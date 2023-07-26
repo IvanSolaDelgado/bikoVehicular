@@ -17,7 +17,7 @@ export const GifList: FC<Props> = ({ gifs }) => {
       </header>
       <div className="gifs-container">
         {gifs.map((gif, index) => (
-          <Link to={`/details/:${gif.id}`} key={index}>
+          <Link to={`/details/${gif.id}`} key={index}>
             <img className="gif" src={gif.imgUrl} alt={gif.name} key={index} />
           </Link>
         ))}

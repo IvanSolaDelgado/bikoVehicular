@@ -1,8 +1,8 @@
 import { Gif } from '../../domain/Gif'
-import { getGifsDetails } from '../../infrastructure/ApiGifRepository'
+import { getGifListDetails } from '../../infrastructure/ApiGifRepository'
 
 const getGifs = async (): Promise<Gif[]> => {
-  return await getGifsDetails()
+  return await getGifListDetails()
 }
 
 export const gifService = {
