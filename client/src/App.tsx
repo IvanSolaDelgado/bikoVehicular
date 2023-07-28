@@ -1,11 +1,12 @@
+import { FC } from 'react'
+import { AppRouter } from './AppRouter'
+import { Gif } from './core/domain/Gif'
 import './styles/index'
-
-import { Home } from './components/pages/home'
 
 const App = () => {
   return (
     <div className="app">
-      <Home />
+      <AppRouter />
     </div>
   )
 }

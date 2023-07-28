@@ -12,5 +12,12 @@ export const createRoutes = (db: LowdbSync<DatabaseSchema>) => {
     res.set('Access-Control-Allow-Origin', '*')
     res.status(200).json(gifs.map(mapData))
   })
+
+  apiRoutes.get('/gif/:gifId', (req, res) => {
+    const gifId = req.params.gifId
+    const gif = db.get('gifs').find({ id: gifId }).value()
+    res.set('Access-Control-Allow-Origin', '*')
+    res.status(200).json(mapData(gif))
+  })
   return apiRoutes
 }
