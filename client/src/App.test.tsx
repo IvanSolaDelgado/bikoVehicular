@@ -35,6 +35,4 @@ describe('listado de gifs', () => {
       await screen.findByText('Sorry, gifs not found :/'),
     ).toBeInTheDocument()
   })
-
-  it('recibe un input al clicar el boton de busqueda', async () => {})
 })
